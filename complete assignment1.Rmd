@@ -1,0 +1,173 @@
+---
+title: Exercises 1. Vectors 
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Question 1a
+```{r}
+H <- (1:20)
+H
+```
+Question 1b
+```{r}
+X <- (20:1)
+X
+```
+Question 1c
+```{r}
+F <- c(1:20,19:1)
+F
+```
+Question 1d
+```{r}
+P <- c(4,6,3)
+```
+Question 1e
+```{r}
+rep(c(4,6,3) , times = 4)
+```
+Question 1f
+```{r}
+rep(c(4,6,3),times = c(10,1,1))
+```
+Question 1g
+```{r}
+rep(c(4,6,3), times = c(11,10,10))
+```
+Question 1h
+```{r}
+rep(c(4,6,3), times = c(10,20,30))
+```
+Question 2
+```{r}
+x <- seq(3 ,6, 0.1)
+x
+exp(x)*cos(x)
+```
+Question 3a
+```{r}
+x <- seq(3,36 ,by =3)
+y <- seq(1,34 ,by =3)
+z <- rep(0.1, times = 12)
+h <- rep(0.2, times = 12)
+g <- z^x*h^y
+g
+```
+Question 3b
+```{r}
+x <- seq(2,25)
+y <- 2
+z <- c(y,y^x/x)
+z
+```
+Question 4a
+```{r}
+H =c(10:100)
+sum(H + 4^2)
+```   
+Question 4b
+```{r}
+H <- c(1:25)
+sum(2^H/H + 3^H/H^2)
+```
+Question 5a
+```{r}
+x <- paste("label",1:30)
+x
+```
+Question 5b
+```{r}
+x <- paste0("fn",1:30)
+x
+```
+Question 6a
+```{r}
+set.seed(50)
+xVec <- sample(0:999, 250, replace=T)
+yVec <- sample(0:999, 250, replace=T)
+z <- yVec[seq(2:250)]-xVec[seq(1:249)]
+z
+```
+Question 6b 
+```{r}
+sinyVec <- sin(yVec)
+CosxVec <- cos(xVec)
+R <- sinyVec/CosxVec
+R
+```
+Question 6c
+```{r}
+y <- xVec[1:248]
+m <- xVec[2:249]
+w <- xVec[3:250]
+ZY <- y + 2 * m - w
+ZY
+```
+Question 6d
+```{r}
+x <- xVec[-length(xVec)]+10
+y <- exp(-xVec[-1])
+z <- sum(y/x)
+z
+```
+Question 7a
+```{r}
+X <- sort(yVec[1:600])
+X
+```
+Question 7b
+```{r}
+x <- which(yVec >600)
+x
+```
+Question 7c
+```{r}
+x <- which(xVec > 600)
+y <- which(yVec > 600)
+x <- append(x,y,after = length(x))
+h <- sort(x)
+h
+h[duplicated(h)]
+
+```
+Question 7d
+```{r}
+G <- abs(xVec - mean(xVec))
+sqrt(G)
+```
+Question 7e
+```{r}
+R <- sum( yVec>max(yVec)-200 )
+R
+
+```
+Question 7f
+```{r}
+xVec[which(xVec %% 2 == 0)]
+```
+Question 7g
+```{r}
+sort(order(xVec)[yVec]) 
+```
+Question 7h
+```{r}
+yVec[seq(1,250, by=3)]
+```
+Question 8
+```{r}
+d <- seq(2,38,by=2)
+e <- seq(3,39,by=2)
+T <- sum(cumprod(d/e))
+1 + T
+```
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
